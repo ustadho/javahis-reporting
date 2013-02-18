@@ -4,11 +4,14 @@
  */
 package javahis.reporting;
 
+import java.sql.Connection;
+
 /**
  *
  * @author ustadho
  */
 public class FrmReport extends javax.swing.JFrame {
+    private Connection conn;
 
     /**
      * Creates new form FrmReport
@@ -33,7 +36,7 @@ public class FrmReport extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jXDatePicker1, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 11, -1, -1));
         getContentPane().add(jXDatePicker2, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 44, -1, -1));
@@ -59,7 +62,7 @@ public class FrmReport extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -104,4 +107,8 @@ public class FrmReport extends javax.swing.JFrame {
     private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
     private org.jdesktop.swingx.JXDatePicker jXDatePicker2;
     // End of variables declaration//GEN-END:variables
+
+    void setConn(Connection con) {
+        this.conn=con;
+    }
 }
